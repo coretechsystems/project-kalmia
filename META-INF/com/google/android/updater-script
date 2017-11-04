@@ -1,6 +1,6 @@
 ui_print("*************************************");
-ui_print("*     G900T_QA1_Stock_Rooted_ROM    *");
-ui_print("*          Marshmallow 6.0.1        *");
+ui_print("*     CoreTech Testing Firmware     *");
+ui_print("*          Project KALMIA           *");
 ui_print("*************************************");
 ui_print("");
 unmount("/system");
@@ -22,6 +22,7 @@ delete_recursive("/cache");
 ui_print("@ Wiping Dalvik Cache ...");
 mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/userdata", "/data");
 delete_recursive("/data/dalvik-cache");
+ui_print("@ Flashing System...");
 package_extract_dir("system", "/system");
 symlink("app_process32", "/system/bin/app_process");
 symlink("dalvikvm32", "/system/bin/dalvikvm");
