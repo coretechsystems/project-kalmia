@@ -1,0 +1,5 @@
+#!/system/bin/sh
+# Additional way of loading SuperSU daemon
+
+/system/xbin/daemonsu --auto-daemon &
+

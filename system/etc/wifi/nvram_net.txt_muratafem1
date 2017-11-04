@@ -7,8 +7,6 @@ boardflags=0x12401001
 boardflags2=0x00802000
 boardflags3=0x40000109
 macaddr=00:90:4c:16:70:01
-#ccode modified by Murata
-#ccode=0
 ccode=US
 regrev=0
 antswitch=0

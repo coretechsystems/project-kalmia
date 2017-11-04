@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <mixer>
-	<!-- K LTE ATT ================================================ -->
+	<!-- K LTE TMO ================================================ -->
 	<!-- These are the initial mixer settings -->
 	<!-- reset RX part -->
 	<ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia1" value="0" />
@@ -288,6 +288,11 @@
 		<ctl name="MultiMedia1 Mixer VOC_REC_UL" value="1" />
 		<ctl name="MultiMedia1 Mixer VOC_REC_DL" value="1" />
 	</path>	
+	
+	<path name="incall-rec-uplink-and-downlink bt-sco">
+		<ctl name="MultiMedia1 Mixer VOC_REC_UL" value="1" />
+		<ctl name="MultiMedia1 Mixer VOC_REC_DL" value="1" />
+	</path>
 
 	<path name="bt-call-forwarding">
        	 <ctl name="SLIM_0_RX_Voice Mixer Voice Stub" value="1" />
@@ -296,8 +301,8 @@
               <ctl name="Voice Stub Tx Mixer AUX_PCM_UL_TX" value="1" />
 	       <ctl name="AUXPCM_RX Port Mixer SLIM_0_TX" value="1" />
 	       <ctl name="SLIMBUS_0_RX Port Mixer AUX_PCM_UL_TX" value="1" />
-      </path>
-	
+      </path>	
+      
 	<!-- end of Verb -->
 
 	<!-- ================================================================ -->
@@ -796,13 +801,14 @@
 	</path>
 
 	<path name="voice-call-headset-mic">
+
 		<path name="ear-mic" />
 		<ctl name="ADC2 Volume" value="12" />
 		<ctl name="DEC5 Volume" value="84" />
 		<ctl name="IIR1 INP1 MUX" value="DEC5" />
 		<ctl name="RX1 MIX2 INP1" value="IIR1" />
 		<ctl name="RX2 MIX2 INP1" value="IIR1" />
-		<ctl name="IIR1 INP1 Volume" value="60" />
+		<ctl name="IIR1 INP1 Volume" value="59" />
 	</path>
 
 	<path name="voice-call-NS-mic-handset">
@@ -834,8 +840,8 @@
 		<ctl name="DEC4 Volume" value="96" />
 		<ctl name="DEC2 Volume" value="84" />
 	</path>
-	<!-- end of Voice call Scenario  -->
-
+	<!-- end of Voice call Scenario  -->	
+	
 	<!-- ================================================================ -->	
 	<!-- call forward Scenario -->
 	<path name="voice-call-forward">
@@ -980,8 +986,8 @@
 		<path name="spk" />
 		<ctl name="RX7 Digital Volume" value="84" />
 		<ctl name="SPK DRV Volume" value="8" />
-	        <ctl name="COMP0 Switch" value="1" />
-	</path>
+	        <ctl name="COMP0 Switch" value="1" />	
+        </path>
 
 	<path name="VoLTE-voice-speaker-extra-vol">
 		<path name="spk" />
@@ -990,7 +996,6 @@
 	</path>
 
 	<path name="VoLTE-voice-headset">
-	 
 		<path name="ear" />
 		<ctl name="HPHL Volume" value="14" />
 		<ctl name="HPHR Volume" value="14" />
@@ -1023,15 +1028,11 @@
 	</path>
 
 	<path name="VoLTE-voice-headphone-mic">
-
 		<path name="main-mic" />
 		<ctl name="DEC2 Volume" value="96" />
-
-
 	</path>
 
 	<path name="VoLTE-voice-headset-mic">
- 
 		<path name="ear-mic" />
 		<ctl name="ADC2 Volume" value="12" />
 		<ctl name="DEC5 Volume" value="84" />
@@ -1039,8 +1040,6 @@
 		<ctl name="RX1 MIX2 INP1" value="IIR1" />
 		<ctl name="RX2 MIX2 INP1" value="IIR1" />
 		<ctl name="IIR1 INP1 Volume" value="59" />
-
-
 	</path>
 
 	<path name="VoLTE-voice-NS-mic-handset">

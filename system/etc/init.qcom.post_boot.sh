@@ -886,3 +886,12 @@ case "$target" in
         echo $oem_version > /sys/devices/soc0/image_crm_version
         ;;
 esac
+
+# Init.d support
+SU="$(ls /su/bin/su 2>/dev/null || ls /system/xbin/su) -c"
+mount -o rw,remount /system && SU="" || eval "$SU mount -o rw,remount /system"
+eval "$SU chmod 777 /system/etc/init.d"
+eval "$SU chmod 777 /system/etc/init.d/*"
+eval "$SU mount -o ro,remount /system"
+ls /system/etc/init.d/* 2>/dev/null | while read xfile ; do eval "$SU /system/bin/sh $xfile" ; done
+
